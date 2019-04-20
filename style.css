@@ -1,0 +1,103 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body{
+	position: relative;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    /* text-align: center; */
+}
+.container{
+	position:relative;
+	z-index: -1;
+    display: inline-block;
+    height: 720px;
+    width: 850px;
+    border: 2px solid gray;
+    margin: 6px 0px;
+}
+.CCC{
+	position: absolute;
+    z-index: 5 !important;
+	/* border: 1px solid red; */
+	/* background-color: rgba(15, 15, 15, 0.35); */
+	margin-left: 15px;
+}
+.hide{
+    display: none;
+}
+.line{
+	display: inline-block;
+	border-left: 2px solid greenyellow;
+	border-top: 2px solid greenyellow;
+	height: 675px;
+	width: 375px;
+	margin: 0px 250px;
+}
+.textX{
+	display: inline-block;
+}
+.yline{
+	position: absolute;
+}
+.choseColor{
+	display: inline-block;
+	position:absolute;
+	z-index: 10;
+	margin: 50px -300px;
+}
+a{
+	text-decoration: none;
+	position: absolute;
+	margin: 100px 300px;
+	font-size: 32px;
+	background-color: crimson;
+	color: white;
+	line-height: 60px;
+	border-radius: 10px;
+	width: 80px;
+	text-align: center;
+
+}
