@@ -40,8 +40,8 @@ function xy(event){
     var color = document.querySelector("#color")
     var originX = Math.floor(event.clientX/15)
     var originY = Math.floor(event.clientY/15)
-    var x = Math.floor(originX*15)-555
-    var y = Math.floor(originY*15)-29
+    var x = Math.floor(originX*15)-450
+    var y = Math.floor(originY*15)-30
     if(flag){
         Context.fillStyle = color.value
         Context.fillRect (x, y, 15, 15)

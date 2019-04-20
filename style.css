@@ -44,26 +44,30 @@ table {
 body{
 	position: relative;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     /* align-items: center; */
     flex-wrap: wrap;
-    font-family: 'Inconsolata', monospace;
+	font-family: 'Inconsolata', monospace;
+	height: 720px;
+	width: 1000px;
 }
 .container{
+	background-image: url("running.png");
+	background-size: 100%;
 	position:relative;
 	z-index: -1;
     display: inline-block;
-    height: 720px;
-    width: 850px;
-    border: 2px solid gray;
-    margin: 6px 0px;
+    height: 700px;
+    width: 840px;
+    /* border: 2px solid gray; */
+    margin: 6px 200px;
 }
 .CCC{
 	position: absolute;
     z-index: 5 !important;
 	/* border: 1px solid red; */
 	/* background-color: rgba(15, 15, 15, 0.35); */
-	margin: 32px 14px;
+	margin: 31px 452px;
 }
 .hide{
     display: none;
@@ -86,7 +90,7 @@ body{
 	display: inline-block;
 	position:absolute;
 	z-index: 10;
-	margin: 50px -300px;
+	margin: 50px 200px;
 	text-align: center;
 }
 #color{
@@ -100,7 +104,7 @@ body{
 a{
 	text-decoration: none;
 	position: absolute;
-	margin: 100px 300px;
+	margin: 100px 900px;
 	font-size: 32px;
 	background-color: crimson;
 	color: white;
@@ -111,12 +115,12 @@ a{
 }
 .eraser{
 	background-image: url("eraser.png");
-	margin: 200px 280px;
+	margin: 200px 880px;
 	/* border: 2px solid gray; */
 }
 .pencil{
 	background-image: url("./pencil.png");
-	margin: 200px 350px;
+	margin: 200px 960px;
 	/* border: 2px solid gray; */
 }
 #doBox{
