@@ -47,7 +47,7 @@ body{
     justify-content: center;
     /* align-items: center; */
     flex-wrap: wrap;
-    /* text-align: center; */
+    font-family: 'Inconsolata', monospace;
 }
 .container{
 	position:relative;
@@ -63,15 +63,15 @@ body{
     z-index: 5 !important;
 	/* border: 1px solid red; */
 	/* background-color: rgba(15, 15, 15, 0.35); */
-	margin-left: 15px;
+	margin: 32px 14px;
 }
 .hide{
     display: none;
 }
 .line{
 	display: inline-block;
-	border-left: 2px solid greenyellow;
-	border-top: 2px solid greenyellow;
+	border-left: 2px solid #5cbc67;
+	border-top: 2px solid #5cbc67;
 	height: 675px;
 	width: 375px;
 	margin: 0px 250px;
@@ -87,6 +87,15 @@ body{
 	position:absolute;
 	z-index: 10;
 	margin: 50px -300px;
+	text-align: center;
+}
+#color{
+	height: 40px;
+	width: 150px;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 20px;
+	font-family: 'Inconsolata', monospace;
 }
 a{
 	text-decoration: none;
@@ -99,5 +108,24 @@ a{
 	border-radius: 10px;
 	width: 80px;
 	text-align: center;
-
+}
+.eraser{
+	background-image: url("eraser.png");
+	margin: 200px 280px;
+	/* border: 2px solid gray; */
+}
+.pencil{
+	background-image: url("./pencil.png");
+	margin: 200px 350px;
+	/* border: 2px solid gray; */
+}
+#doBox{
+	display: inline-block;
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	background-size: 100%;
+}
+#doBox:hover{
+	cursor: pointer;
 }

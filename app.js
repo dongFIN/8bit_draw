@@ -1,19 +1,18 @@
-var canvas = document.getElementById('canvas'),
-    context = canvas.getContext('2d');
-        
-    
-context.fillStyle = 'rgb(200, 0, 0)';
-context.fillRect (10, 10, 55, 50);
-context.fillStyle = 'rgba(0, 0, 200, 0.5)';
-context.fillRect (30, 30, 55, 50);
-
-var image = document.getElementById('image'),
-    image2 = document.getElementById('image2');
-
-image.src = canvas.toDataURL();
-image2.src = canvas.toDataURL('image/jpeg');
-
 var container = document.querySelector(".container")
+var pen = document.querySelector(".pencil");
+var eraser = document.querySelector(".eraser")
+var choseColor = document.querySelector(".choseColor")
+var flag = 1
+
+pen.addEventListener("click",function(){
+    flag = 1
+})
+eraser.addEventListener("click",function(){
+    flag = 0
+})
+choseColor.addEventListener("click",function(){
+    flag = 1
+})
 
 function makeSVG(tag, attrs) {
     var el= document.createElementNS('http://www.w3.org/2000/svg', tag);
@@ -33,19 +32,22 @@ for(var i = 0; i < 675; i = i+15){
         console.log(i +" "+ j)
     }
 }
+
 var Convas = document.querySelector(".canvas")
-console.log(Convas)
+var Context = Convas.getContext('2d');
 Convas.addEventListener("pointerdown",xy)
 function xy(event){
+    var color = document.querySelector("#color")
     var originX = Math.floor(event.clientX/15)
     var originY = Math.floor(event.clientY/15)
-    var x = Math.floor(originX*15)-556
-    var y = Math.floor(originY*15)+2
-    Context.fillStyle = color.value
-    Context.fillRect (x, y, 15, 15)
-    console.log(x +" & "+ y)
+    var x = Math.floor(originX*15)-555
+    var y = Math.floor(originY*15)-29
+    if(flag){
+        Context.fillStyle = color.value
+        Context.fillRect (x, y, 15, 15)
+    }
+    else Context.clearRect (x, y, 15, 15)
 }
-var color = document.querySelector("#color")
-var Context = Convas.getContext('2d');
+
         
     
