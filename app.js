@@ -37,6 +37,7 @@ var Convas = document.querySelector(".canvas")
 var Context = Convas.getContext('2d');
 Convas.addEventListener("pointerdown",xy)
 function xy(event){
+    event.preventDefault();
     var color = document.querySelector("#color")
     var originX = Math.floor(event.clientX/15)
     var originY = Math.floor(event.clientY/15)
