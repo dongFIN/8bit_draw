@@ -65,8 +65,6 @@ body{
 .CCC{
 	position: absolute;
     z-index: 5 !important;
-	/* border: 1px solid red; */
-	/* background-color: rgba(15, 15, 15, 0.35); */
 	margin: 31px 452px;
 }
 .hide{
@@ -104,7 +102,7 @@ body{
 a{
 	text-decoration: none;
 	position: absolute;
-	margin: 100px 900px;
+	margin: 50px 900px;
 	font-size: 32px;
 	background-color: crimson;
 	color: white;
@@ -115,13 +113,11 @@ a{
 }
 .eraser{
 	background-image: url("eraser.png");
-	margin: 200px 880px;
-	/* border: 2px solid gray; */
+	margin: 150px 880px;
 }
 .pencil{
 	background-image: url("./pencil.png");
-	margin: 200px 960px;
-	/* border: 2px solid gray; */
+	margin: 150px 960px;
 }
 #doBox{
 	display: inline-block;
@@ -132,4 +128,50 @@ a{
 }
 #doBox:hover{
 	cursor: pointer;
+}
+.HIS{
+	display: inline-block;
+	position: absolute;
+	height: 205px;
+	width: 250px;
+	border: 2px solid gray;
+	margin: 300px 850px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+
+}
+.add{
+	display: inline-block;
+	font-size: 20px;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 10px;
+	height: 30px;
+	width: 65px;
+	color:#2c2c2c;
+	margin: 7px 5px 3px 10px;
+	/* background-color: #106568; */
+}
+.add:hover{
+	cursor: pointer;
+	color:#222222;
+	font-size: 21px;
+}
+.list{
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	margin: 7.5px 2.5px 2.5px 7.5px;
+}
+.hex{
+	display: inline-block;
+	position: absolute;
+	height: 50px;
+	width: 230px;
+	border: 2px solid gray;
+	margin: 225px 850px;
+	font-size: 24px;
+	line-height: 50px;
+	padding-left: 20px;
 }
