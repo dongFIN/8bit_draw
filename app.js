@@ -3,29 +3,37 @@ var pen = document.querySelector(".pencil");
 var eraser = document.querySelector(".eraser")
 var color = document.querySelector("#color")
 var add = document.querySelector(".add")
+var list = ["#123456"] //記錄歷史顏色陣列 (控制大小<=24)
 var hexNum = document.querySelector(".hex")
-var HIS = document.querySelector(".HIS")
-var choseColor = document.querySelector(".choseColor")
-var flag = 1
+var HIS = document.querySelector(".HIS") //歷史顏色的container
+var choseColor = document.querySelector(".choseColor") //如果變換顏色則自動切換至著色模式
+var flag = 1 //1：著色, 0:橡皮擦
 
-pen.addEventListener("click",function(){
-    flag = 1
-})
-eraser.addEventListener("click",function(){
-    flag = 0
-})
-add.addEventListener("click",function(){
-    var histColor = document.createElement("div")
-    histColor.classList.add("list")
-    histColor.style.backgroundColor = color.value
-    HIS.appendChild(histColor)
+pen.addEventListener("click",function(){ flag = 1})
+eraser.addEventListener("click",function(){ flag = 0})
+choseColor.addEventListener("click",function(){ flag = 1})
+
+add.addEventListener("click",LIST)
+function LIST(event){
+    event.preventDefault();
+    if(list.length > 24){
+        list = list.slice(1,25)
+    }
+    list.push(color.value)
+    creatColor()
+}
+function creatColor(){  // 每次都重新建一次陣列
+    HIS.innerHTML = null
+    for(var x = list.length - 1; x > 0; x = x-1){
+        var histColor = document.createElement("div")
+        histColor.classList.add("colorList")
+        histColor.style.backgroundColor = list[x]
+        HIS.appendChild(histColor)
+    }
     beUsedColor()
-})
-choseColor.addEventListener("click",function(){
-    flag = 1
-})
+}
 
-function makeSVG(tag, attrs) {
+function makeSVG(tag, attrs) { //引用函式
     var el= document.createElementNS('http://www.w3.org/2000/svg', tag);
     for (var k in attrs)
         el.setAttribute(k, attrs[k]);
@@ -40,11 +48,10 @@ for(var i = 0; i < 675; i = i+15){
         }
         else rect =  makeSVG('rect', {x: j, y: i, width: 15, height: 15, fill: '#ababab'});
         document.getElementById('s').appendChild(rect);
-        // console.log(i +" "+ j)
     }
 }
 
-var Convas = document.querySelector(".canvas")
+var Convas = document.querySelector(".canvas")  //見主要填色處
 var Context = Convas.getContext('2d');
 Convas.addEventListener("pointerdown",xy)
 function xy(event){
@@ -61,7 +68,7 @@ function xy(event){
     else Context.clearRect (x, y, 15, 15)    
 }
 function beUsedColor(){
-    const list = document.querySelectorAll(".list")
+    const list = document.querySelectorAll(".colorList")
     for(var x of list){
         x.addEventListener("click", function(e){
             var setcolor = e.currentTarget
