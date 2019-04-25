@@ -34,6 +34,30 @@ function creatColor(){  // 每次都重新建一次陣列
         colorDiv.classList.add("colorList")
         colorDiv.style.backgroundColor = list[x]
         historyColor.appendChild(colorDiv)
+        
+    }
+    let count = $(".colorList").length;
+    let colors = document.querySelectorAll(".colorList");
+    for(var idx = 0; idx < count; idx++){
+        let delBtn = document.createElement("i");
+        delBtn.classList.add("fas");
+        delBtn.classList.add("fa-times-circle");
+        delBtn.classList.add("delBtn")
+        colors[idx].addEventListener("click", (e)=>{
+            console.log(rgb2hex(e.target.parentElement.style.backgroundColor));
+            // delete list[list.indexOf(rgb2hex(e.target.parentElement.style.backgroundColor))];
+            let selectedColor = list.indexOf(rgb2hex(e.target.parentElement.style.backgroundColor));
+            list = [...list.slice(0,selectedColor), ...list.slice(selectedColor+1,list.length)]
+            console.log(e.target.parentElement);
+            historyColor.removeChild(e.target.parentElement);
+            // for(let ele of colors){
+            //     if(ele.style.backgroundColor == e.target.parentElement.style.backgroundColor){
+            //         historyColor.removeChild(ele);
+            //     }
+            // }
+        })
+        colors[idx].appendChild(delBtn);
+        // colorDiv
     }
     beUsedColor()
 }
@@ -87,8 +111,13 @@ function rgb2hex(rgb) {
     rgb = rgb.match(/\d+/g);
     // console.log(rgb)
     function hex(x) {
-        return (parseInt(x)).toString(16)
+        let dest = (parseInt(x)).toString(16);
+        while (dest.length < 2) {
+            dest = "0" + dest;
+        }
+        return dest
     }
+    
     return ("#" +  hex(rgb[0]) +  hex(rgb[1]) +  hex(rgb[2]))
 }
         

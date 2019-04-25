@@ -10,7 +10,13 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link rel="stylesheet" href="farbtastic.css" type="text/css" /> 
     <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'/>
     <title>8bit draw</title>
+    <script type="text/javascript" defer>
+        $(function() {
+            $('#colorpicker').farbtastic('#color');
+        });
+    </script> 
 </head>
 <body>
     
@@ -20,16 +26,14 @@
     <div class="hex">History Color</div>
     <div class="bigBox">
         <div class="add">新增 <p style="font-size:14px; display: inline">點選以記錄欲保存顏色</p></div>
-        <div class="HIS"></div>
+        <div class="HIS">
+
+        </div>
     </div>
     <div class="choseColor">
             <div id="colorpicker"></div>
             <form><input type="text" id="color" name="color" value="#123456" /></form>
-            <script type="text/javascript">
-                $(function() {
-                    $('#colorpicker').farbtastic('#color');
-                });
-            </script> 
+            
     </div>
 
     <div class="container">
