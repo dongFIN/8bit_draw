@@ -182,3 +182,18 @@ a{
 	flex-wrap: wrap;
 	align-content: flex-start;
 }
+.colorList{
+	position: relative;
+}
+.delBtn{
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	width: 15px;
+	height: 15px;
+	border-radius: 99px;
+	z-index: 2;
+	cursor: pointer;
+	color: red;
+	background-color: #fff;
+}
